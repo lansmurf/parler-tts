@@ -531,7 +531,7 @@ def main():
         if accelerator.is_main_process:
             vectorized_datasets.save_to_disk(
                 data_args.save_to_disk,
-                num_proc=min(data_args.preprocessing_num_workers, len(vectorized_datasets["eval"]) - 1),
+                num_proc==data_args.preprocessing_num_workers,
             )
         logger.info(f"Dataset saved at {data_args.save_to_disk}")
 
